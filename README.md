@@ -1,5 +1,6 @@
-# mean-angular2-registration-login-example
+# Exercício de Programação - Soluções Web, EACH(USP)
 
-MEAN Stack with Angular 2 - User Registration and Login Example & Tutorial
+O Objetivo do trabalho é a criação de uma plataforma que solucione um problema atual da sociedade, utilizando em sua maioria tecnologias OpenSource
 
-For details and documentation go to http://jasonwatmore.com/post/2017/02/22/mean-with-angular-2-user-registration-and-login-example-tutorial
+LICENÇAS:
+Login da plataforma baseada em: http://jasonwatmore.com/post/2017/02/22/mean-with-angular-2-user-registration-and-login-example-tutorial
