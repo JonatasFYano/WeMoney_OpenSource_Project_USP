@@ -1,0 +1,6 @@
+.table-style .today {background: #2A3F54; color: #ffffff;}
+.table-style th:nth-of-type(7),td:nth-of-type(7) {color: blue;}
+.table-style th:nth-of-type(1),td:nth-of-type(1) {color: red;}
+.table-style tr:first-child th{background-color:#17a2b8!important; text-align:center; font-size: 15px;}
+.table td {padding: .5rem 3.75rem;}
+.table th {text-align: center;}

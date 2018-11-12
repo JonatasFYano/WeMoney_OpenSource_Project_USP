@@ -14,6 +14,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { MySessionComponent } from './mySession/mySession.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { MySessionComponent } from './mySession/mySession.component';
         HomeComponent,
         MySessionComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        ProfileComponent,
     ],
     providers: [
         AuthGuard,

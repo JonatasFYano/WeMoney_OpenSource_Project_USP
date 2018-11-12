@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" type="text/css" href="../assets/css/webRTCstyle/stylesheets/style.css" />
     <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
-    <script src="../assets/js/modernizr.custom.js"></script>
+    <script src="app/assets/js/modernizr.custom.js"></script>
 	<link rel="stylesheet" type="text/css" href="../assets/css/webRTCstyle/stylesheets/normalize.css" />
 	<style>
 		#vid-box{
@@ -20,8 +20,54 @@
 		}
 	</style>	
 </head>
-<body>
-<div class = "bodyDiv">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">We Money</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav" style="display: inline-block!important">
+				  <ul class="navbar-nav">
+					<li class="nav-item active">
+					  <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a [routerLink]="['/mySession']" class="nav-link">My Sessions</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+					</li>
+				  </ul>
+				</div>
+			  </nav>
+
+			  <div class="container">
+					<h2>
+						Seus Cursos
+					</h2>
+					<!-- <div class="row">
+						<div class="col-md-12">
+							<h2>
+								Seus Cursos
+							</h2>
+						</div> -->
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<img class="card-img-top" src="app/assets/images/trump.jpg" alt="Card image cap" height="200px">
+								<div class="card-body">
+									<h5 class="card-title">Save $$$ with a bit of planning</h5>
+									<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+									<button (click)="toggle()"> Entrar na Sala</button> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+	<div *ngIf="show">
+
+	<div class = "bodyDiv">
+		
 
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 <!-- My Phone Number & Dial Areas -->
@@ -80,29 +126,36 @@
 <p class="ptext"><b>To Use:</b></p>
 <p class="ptext">Type a username and click Log in. If input turns green you are ready to receive/place a call.</p>
 <p class="ptext">In a separate browser window, log in with a different username, and place a call to the first.</p>
+</div>
+
+
 
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <!-- WebRTC Peer Connections -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
-<script src="../assets/js/webrtc.js"></script>
-<script src="../assets/js/rtc-controller.js"></script>
+<script src="app/assets/js/webrtc.js"></script>
+<script src="app/assets/js/rtc-controller.js"></script>
 
 <script type="text/javascript">
+
+function myFunction() {
+   var element = document.getElementById("teste");
+   element.classList.remove("d-none");
+   return;
+}
     
 function login(form) {
 	var phone = window.phone = PHONE({
-	    number        : form.username.value || "Anonymous", // listen on username line else Anonymous
+	    number        : "jonatasyano" || "Anonymous", // listen on username line else Anonymous
 	    publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c', // Your Pub Key
 	    subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe', // Your Sub Key
 	});
 	var ctrl = window.ctrl = CONTROLLER(phone);
 	ctrl.ready(function(){
-		form.username.style.background="#55ff5b"; 
-		form.login_submit.hidden="true"; 
 		ctrl.addLocalStream(vid_thumb);
-		addLog("Logged in as " + form.username.value); 
+		addLog("Logged in as " + "jonatasyano"); 
 	});
 	ctrl.receive(function(session){
 	    session.connected(function(session){ video_out.appendChild(session.video); addLog(session.number + " has joined."); vidCount++; });
@@ -119,9 +172,9 @@ function login(form) {
 	return false;
 }
 
-function makeCall(form){
+function makeCall(formamamama){
 	if (!window.phone) alert("Login First!");
-	var num = form.number.value;
+	var num = "form.number.value";
 	if (phone.number()==num) return false; // No calling yourself!
 	ctrl.isOnline(num, function(isOn){
 		if (isOn) ctrl.dial(num);
@@ -171,5 +224,4 @@ function addLog(log){
 </script>
 
 </div>
-</body>
 </html>

@@ -9,6 +9,7 @@ import { FormGroup,  FormBuilder,  Validators , FormControl} from '@angular/form
   styleUrls: ['mySession.component.css']
 })
 export class MySessionComponent implements OnInit {
+  public show:boolean = false;
   
   // registerForm: FormGroup;
   // func: FormControl;
@@ -18,7 +19,6 @@ export class MySessionComponent implements OnInit {
 
   
   ngOnInit() {
-
     // this.func = new FormControl("", Validators.required);
     // this.login = new FormControl("", Validators.required);
     // this.registerForm = new FormGroup({
@@ -41,6 +41,10 @@ onSubmit(fxn:any){
   }
 // }
 
+toggle() {
+  this.show = !this.show;
+}
+
 errWrap(func:any, form:any){
 	try {
     console.log(func)
@@ -51,5 +55,6 @@ errWrap(func:any, form:any){
 		return false;
 	}
 }
+
 }
  
