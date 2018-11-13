@@ -41,7 +41,7 @@
 			  </nav>
 			  <div *ngIf="!show">
 
-			  <div class="container">
+			  <div class="container mt-3 mb-5">
 					<h2>
 						Seus Cursos
 					</h2>
@@ -52,13 +52,23 @@
 							</h2>
 						</div> -->
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="card">
 								<img class="card-img-top" src="app/assets/images/trump.jpg" alt="Card image cap" height="200px">
 								<div class="card-body">
 									<h5 class="card-title">Save $$$ with a bit of planning</h5>
 									<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 									<button (click)="toggle()"> Entrar na Sala</button> 
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card">
+								<img class="card-img-top" src="app/assets/images/investimento.jpg" alt="Card image cap" height="200px">
+								<div class="card-body">
+								<h5 class="card-title">Investments 101</h5>
+								<p class="card-text">Want to invest money but don't know where to start? They do.</p>
+								<button (click)="toggle()"> Entrar na Sala</button> 
 								</div>
 							</div>
 						</div>
@@ -83,39 +93,51 @@
 	    <input type="submit" name="login_submit" value="Log In">
 	</form>
 -->
-	<span class="input input--nao">
-		<input class="input__field input__field--nao" type="text" [(ngModel)]='username' id="username" placeholder="Entre com seu Usuário"/>
-			<label class="input__label input__label--nao" for="username">
-				<span class="input__label-content input__label-content--nao">                                          
-				</span>
-			</label>
-			<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-				<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-			</svg>
-	</span>
-	<button class="cbutton cbutton--effect-radomir" onclick="login(username)" type="submit" style="margin-top: 40px; margin-left:-10px">
-		<i class="cbutton__icon fa fa-fw fa fa-sign-in"></i>
-	</button>
-<!--
-	<form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
-		<input type="text" name="number" placeholder="Enter user to dial!" />
-		<input type="submit" value="Call"/>
-	</form>
--->
-<button class="button" onclick="makeCall('jonatasbatata')" style="margin-top: 40px; margin-left:-10px">
-	Chamar Professor
-</button>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 ml-auto mr-auto">
+				<div class="card">
+						<div class="card-body">
+								<span class="input input--nao">
+										<input class="input__field input__field--nao" type="text" [(ngModel)]='username' id="username" placeholder="Entre com seu Usuário"/>
+											<label class="input__label input__label--nao" for="username">
+												<span class="input__label-content input__label-content--nao">                                          
+												</span>
+											</label>
+											<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+												<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+											</svg>
+									</span>
+									<button class="cbutton cbutton--effect-radomir" onclick="login(username)" type="submit" style="margin-top: 40px; margin-left:-10px">
+										<i class="cbutton__icon fa fa-fw fa fa-sign-in"></i>
+									</button>
+								<!--
+									<form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+										<input type="text" name="number" placeholder="Enter user to dial!" />
+										<input type="submit" value="Call"/>
+									</form>
+								-->
+								<button class="button" onclick="makeCall('jonatasbatata')" style="margin-top: 40px; margin-left:-10px">
+									Chamar Professor
+								</button>
+									
+						</div>
+					</div>
+		</div>
+	</div>
+</div>
+
 	
-	<div id="inCall" class="ptext">
+	<!-- <div id="inCall" class="ptext">
 		<button id="end" onclick="end()" >End</button> 
         <button id="mute" onclick="mute()">Mute</button> 
         <button id="pause" onclick="pause()">Pause</button>
-	</div>
+	</div> -->
     
 	<div id="logs" class="ptext"></div>
-
+<!-- 
 <p class="ptext"><b>To Use:</b></p>
-<p class="ptext">Type a username and click Log in. If input turns green you are ready to receive/place a call.</p>
+<p class="ptext">Type a username and click Log in. If input turns green you are ready to receive/place a call.</p> -->
 </div>
 
 
