@@ -39,6 +39,7 @@
 				  </ul>
 				</div>
 			  </nav>
+			  <div *ngIf="!show">
 
 			  <div class="container">
 					<h2>
@@ -63,6 +64,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 
 	<div *ngIf="show">
 
@@ -82,7 +84,7 @@
 	</form>
 -->
 	<span class="input input--nao">
-		<input class="input__field input__field--nao" type="text" [(ngModel)]='username' id="username" placeholder="Enter A Username"/>
+		<input class="input__field input__field--nao" type="text" [(ngModel)]='username' id="username" placeholder="Entre com seu Usuário"/>
 			<label class="input__label input__label--nao" for="username">
 				<span class="input__label-content input__label-content--nao">                                          
 				</span>
@@ -100,19 +102,8 @@
 		<input type="submit" value="Call"/>
 	</form>
 -->
-    
-<span class="input input--nao">
-	<input class="input__field input__field--nao" type="text" [(ngModel)]='usernameDestiny' id="usernameDestiny" placeholder="Enter A Username"/>
-		<label class="input__label input__label--nao" for="username">
-			<span class="input__label-content input__label-content--nao">                                          
-			</span>
-		</label>
-		<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-			<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-		</svg>
-</span>
-<button class="cbutton cbutton--effect-radomir" onclick="makeCall(usernameDestiny)" type="submit" style="margin-top: 40px; margin-left:-10px">
-	<i class="cbutton__icon fa fa-fw fa fa-sign-in"></i>
+<button class="button" onclick="makeCall('jonatasbatata')" style="margin-top: 40px; margin-left:-10px">
+	Chamar Professor
 </button>
 	
 	<div id="inCall" class="ptext">
@@ -125,7 +116,6 @@
 
 <p class="ptext"><b>To Use:</b></p>
 <p class="ptext">Type a username and click Log in. If input turns green you are ready to receive/place a call.</p>
-<p class="ptext">In a separate browser window, log in with a different username, and place a call to the first.</p>
 </div>
 
 
