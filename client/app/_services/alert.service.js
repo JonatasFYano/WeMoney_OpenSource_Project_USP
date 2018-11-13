@@ -45,9 +45,10 @@ var AlertService = /** @class */ (function () {
     AlertService.prototype.getMessage = function () {
         return this.subject.asObservable();
     };
+    var _a;
     AlertService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _a : Object])
     ], AlertService);
     return AlertService;
 }());

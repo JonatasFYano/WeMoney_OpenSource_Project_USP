@@ -31,9 +31,10 @@ var UserService = /** @class */ (function () {
     UserService.prototype.delete = function (_id) {
         return this.http.delete(app_config_1.appConfig.apiUrl + '/users/' + _id);
     };
+    var _a;
     UserService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
+        __metadata("design:paramtypes", [typeof (_a = typeof http_1.HttpClient !== "undefined" && http_1.HttpClient) === "function" ? _a : Object])
     ], UserService);
     return UserService;
 }());
