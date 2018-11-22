@@ -32,10 +32,9 @@ var AuthenticationService = /** @class */ (function () {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     };
-    var _a;
     AuthenticationService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [typeof (_a = typeof http_1.HttpClient !== "undefined" && http_1.HttpClient) === "function" ? _a : Object])
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], AuthenticationService);
     return AuthenticationService;
 }());

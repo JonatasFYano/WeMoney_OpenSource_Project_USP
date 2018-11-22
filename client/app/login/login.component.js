@@ -38,13 +38,14 @@ var LoginComponent = /** @class */ (function () {
             _this.loading = false;
         });
     };
-    var _a, _b;
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'login.component.html'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof router_1.ActivatedRoute !== "undefined" && router_1.ActivatedRoute) === "function" ? _a : Object, typeof (_b = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _b : Object, index_1.AuthenticationService,
+        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+            router_1.Router,
+            index_1.AuthenticationService,
             index_1.AlertService])
     ], LoginComponent);
     return LoginComponent;
