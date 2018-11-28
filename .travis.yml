@@ -7,6 +7,12 @@ install:
   - npm install mocha --save
   - npm install chai --save
 
+addons:
+  sonarcloud:
+    organization: jullyannem-github
+    token:
+      secure: "$SONARCLOUD_TOKEN"
+
 stages:
 - name: Tests
 - name: Deploy to Staging
@@ -29,7 +35,7 @@ jobs:
         branch: master
 
   - stage: Test Staging
-    script: 'curl http://wemoney-staging.herokuapp.com'
+    script: sonar-scanner
 
   - stage: Deploy to Production
     script: skip
