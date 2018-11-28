@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+ - "node"
+
+install:
+  - npm install
+
+stages:
+- name: Test & QA
+- name: Deploy
+
+jobs:
+  include:
+  - stage: Test & QA
+    script: skip
+
+  - stage: Deploy
+    script: skip
+    deploy:
+      provider: heroku
+      api_key: 
+        secure: $HEROKU_API_KEY
+      app: wemoney
+      on: 
+        branch: master
+
+notifications:
+  email:
+    recipients:
+    - mail@gmail.com
+    on_success: change
+    on_failure: always
