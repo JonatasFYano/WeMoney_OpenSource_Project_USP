@@ -25,6 +25,10 @@ var UserService = /** @class */ (function () {
     UserService.prototype.create = function (user) {
         return this.http.post(app_config_1.appConfig.apiUrl + '/users/register', user);
     };
+    UserService.prototype.createCourse = function (course) {
+        console.log(course);
+        return this.http.post(app_config_1.appConfig.apiUrl + '/users/newCourse', course);
+    };
     UserService.prototype.update = function (user) {
         return this.http.put(app_config_1.appConfig.apiUrl + '/users/' + user._id, user);
     };

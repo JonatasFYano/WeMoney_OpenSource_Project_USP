@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">We Money</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/mySession']" class="nav-link">My Sessions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/newCourse']">New Course</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+ <div class="row ml-auto mr-auto align-middle mt-5">
+  <div class="container" style="border:1px solid #cecece; border-radius:10px;">	
+<div class="col-md-11 text-center">
+<span class="col-md-5 ml-5 d-inline-block">
+                <h2>Crie um novo curso</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">Nome é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Sobrenome</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Sobrenome é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nome do Curso</label>
+                        <input type="text" formControlName="courseName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.courseName.errors }" />
+                        <div *ngIf="submitted && f.courseName.errors" class="invalid-feedback">
+                            <div *ngIf="f.courseName.errors.required">Nome do curso é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição do Curso</label>
+                        <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                            <div *ngIf="f.description.errors.required">Descrição do curso é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Detalhes do curso</label>
+                        <input type="text" formControlName="detail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.detail.errors }" />
+                        <div *ngIf="submitted && f.detail.errors" class="invalid-feedback">
+                            <div *ngIf="f.detail.errors.required">Detalhes do curso é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Link imagem</label>
+                        <input type="text" formControlName="image" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.image.errors }" />
+                        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                            <div *ngIf="f.image.errors.required">Imagem é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+                </span>
+            </div>
+        </div>
+    </div>

@@ -1,6 +1,6 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent }  from './app.component';
@@ -15,13 +15,15 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { MySessionComponent } from './mySession/mySession.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NewCourseComponent } from './newCourse/newCourse.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        routing
+        routing,
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent,
@@ -31,6 +33,7 @@ import { ProfileComponent } from './profile/profile.component';
         LoginComponent,
         RegisterComponent,
         ProfileComponent,
+        NewCourseComponent
     ],
     providers: [
         AuthGuard,
