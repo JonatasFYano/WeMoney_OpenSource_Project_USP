@@ -8,7 +8,7 @@ O Objetivo do trabalho é a criação de uma plataforma que solucione um problem
 * Jully Anne Motta 
 
 ### Como rodar
-No diretório raiz, rode ```npm install``` e em seguida execute ```npm start```.
+No diretório raiz, rode ```npm install``` para a instalação das dependências explicitadas em package.json e em seguida execute ```npm start``` para rodar a aplicação.
 
 ### Licenças
 Login da plataforma baseado [neste](http://jasonwatmore.com/post/2017/02/22/mean-with-angular-2-user-registration-and-login-example-tutorial) exemplo.
