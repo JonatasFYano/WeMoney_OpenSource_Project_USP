@@ -1,0 +1,19 @@
+{
+  "name": "ep_we_money",
+  "version": "1.0.0",
+  "description": "O Objetivo do trabalho é a criação de uma plataforma que solucione um problema atual da sociedade, utilizando em sua maioria tecnologias OpenSource",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonatasFYano/WeMoney_OpenSource_Project_USP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonatasFYano/WeMoney_OpenSource_Project_USP/issues"
+  },
+  "homepage": "https://github.com/JonatasFYano/WeMoney_OpenSource_Project_USP#readme"
+}
