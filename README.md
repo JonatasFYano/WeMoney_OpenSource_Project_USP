@@ -8,10 +8,7 @@ O Objetivo do trabalho é a criação de uma plataforma que solucione um problem
 * Jully Anne Motta 
 
 ### Como rodar
-No root, rode:
-```npm install```
-E em seguida execute:
-```npm start```
+No root, rode ```npm install``` e em seguida execute ```npm start```.
 
 ### Licenças
 Login da plataforma baseado [neste](http://jasonwatmore.com/post/2017/02/22/mean-with-angular-2-user-registration-and-login-example-tutorial) exemplo.
