@@ -6,7 +6,8 @@
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" && node server/server.js ",
     "lite": "lite-server",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "test": "mocha server/test/teste.js"
   },
   "dependencies": {
     "angular": "^1.7.5",
