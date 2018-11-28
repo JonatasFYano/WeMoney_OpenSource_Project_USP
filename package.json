@@ -1,10 +1,39 @@
 {
-  "name": "ep_we_money",
+  "name": "wemoney",
   "version": "1.0.0",
   "description": "O Objetivo do trabalho é a criação de uma plataforma que solucione um problema atual da sociedade, utilizando em sua maioria tecnologias OpenSource",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run tsc:w && npm run lite && node server/server.js",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "test": "mocha server/test/teste.js"
+  },
+  "dependencies": {
+    "angular": "^1.7.5",
+    "bcryptjs": "^2.1.0",
+    "body-parser": "^1.13.2",
+    "cors": "^2.8.1",
+    "express": "^4.13.0",
+    "express-jwt": "^3.0.1",
+    "jsonwebtoken": "^5.0.2",
+    "lodash": "^4.17.10",
+    "mongodb": "^2.1.16",
+    "mongoskin": "^2.1.0",
+    "q": "^1.4.1",
+    "request": "^2.87.0",
+    "rootpath": "^0.1.2",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.2.0",
+    "systemjs": "^0.20.19",
+    "zone.js": "^0.8.5"
   },
   "repository": {
     "type": "git",
@@ -14,6 +43,12 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JonatasFYano/WeMoney_OpenSource_Project_USP/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "concurrently": "^3.1.0",
+    "lite-server": "^2.3.0",
+    "typescript": "^2.2.2"
   },
   "homepage": "https://github.com/JonatasFYano/WeMoney_OpenSource_Project_USP#readme"
 }
