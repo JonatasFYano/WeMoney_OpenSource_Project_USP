@@ -8,22 +8,37 @@ install:
   - npm install chai --save
 
 stages:
-- name: Staging
-- name: Production
+- name: Tests
+- name: Deploy to Staging
+- name: Test Staging
+- name: Deploy to Production
 
 jobs:
   include:
-  - stage: Staging
+  - stage: Tests
     script: "mocha server/test/teste.js"
 
-  - stage: Deploy
+  - stage: Deploy to Staging
     script: skip
     deploy:
       provider: heroku
       api_key: 
         secure: $HEROKU_API_KEY
-      app: wemoney
+      app: wemoney-staging
       on: 
+        branch: master
+
+  - stage: Test Staging
+    script: 'curl http://wemoney-staging.herokuapp.com'
+
+  - stage: Deploy to Production
+    script: skip
+    deploy:
+      provider: heroku
+      api_key:
+        secure: $HEROKU_API_KEY
+      app: wemoney-production
+      on:
         branch: master
 
 notifications:
