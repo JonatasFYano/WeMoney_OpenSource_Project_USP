@@ -6,6 +6,7 @@ var userService = require('services/user.service');
 // routes
 router.post('/authenticate', authenticate);
 router.post('/register', register);
+router.post('/newCourse', newCourse);
 router.get('/', getAll);
 router.get('/current', getCurrent);
 router.put('/:_id', update);
@@ -31,6 +32,17 @@ function authenticate(req, res) {
 
 function register(req, res) {
     userService.create(req.body)
+        .then(function () {
+            res.json('success');
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+}
+
+function newCourse(req, res) {
+    console.log(req.body);
+    userService.newCourse(req.body)
         .then(function () {
             res.json('success');
         })

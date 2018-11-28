@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { appConfig } from '../app.config';
 import { User } from '../_models/index';
+import { Course } from '../_models/course';
 
 @Injectable()
 export class UserService {
@@ -18,6 +19,11 @@ export class UserService {
 
     create(user: User) {
         return this.http.post(appConfig.apiUrl + '/users/register', user);
+    }
+    
+    createCourse(course: Course) {
+        console.log(course)
+        return this.http.post(appConfig.apiUrl + '/users/newCourse', course);
     }
 
     update(user: User) {

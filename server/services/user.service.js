@@ -6,6 +6,7 @@ var Q = require('q');
 var mongo = require('mongoskin');
 var db = mongo.db(config.connectionString, { native_parser: true });
 db.bind('users');
+db.bind('newCourse');
 
 var service = {};
 
@@ -13,6 +14,7 @@ service.authenticate = authenticate;
 service.getAll = getAll;
 service.getById = getById;
 service.create = create;
+service.newCourse = newCourse;
 service.update = update;
 service.delete = _delete;
 
@@ -109,6 +111,22 @@ function create(userParam) {
                 deferred.resolve();
             });
     }
+
+    return deferred.promise;
+}
+
+function newCourse(userParam) {
+    var deferred = Q.defer();
+    console.log("Deu certo")
+
+        db.newCourse.insert(
+            userParam,
+            function (err, doc) {
+                if (err) deferred.reject(err.name + ': ' + err.message);
+
+                deferred.resolve();
+            });
+    
 
     return deferred.promise;
 }
